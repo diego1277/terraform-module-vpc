@@ -13,7 +13,7 @@ Binary version ```v1.3.2```
 Set default configuration
 ```
 module "vpc" {
-   source = "https://github.com/diego1277/terraform-vpc-s3.git"
+   source = "github.com/diego1277/terraform-module-vpc"
    name = "my_vpc"
    cidr_block = "192.168.0.0/16"
    public_subnets = ["192.168.1.0/24","192.168.3.0/24"]
@@ -22,7 +22,7 @@ module "vpc" {
 Enable private subnets
 ```
 module "vpc" {
-   source = "https://github.com/diego1277/terraform-vpc-s3.git"
+   source = "github.com/diego1277/terraform-module-vpc"
    name = "my_vpc"
    cidr_block = "192.168.0.0/16"
    public_subnets = ["192.168.1.0/24","192.168.3.0/24"]
@@ -32,7 +32,7 @@ module "vpc" {
 Enable SG ingress rules
 ```
 module "vpc" {
-   source = "./terraform-modules-aws/vpc"
+   source = "github.com/diego1277/terraform-module-vpc"
    name = "my_vpc"
    cidr_block = "192.168.0.0/16"
    private_subnets = ["192.168.0.0/24","192.168.2.0/24"]
