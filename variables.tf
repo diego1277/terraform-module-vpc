@@ -55,7 +55,9 @@ variable public_subnet_tags {
 
 variable sg_ingress_rules {
   description = "default ingress sg rules"
-  type = map(any)
+  type = map(object({description=string,from_port=number,to_port=number,protocol=string,
+                     cidr_blocks=optional(list(string)),self=optional(bool),security_groups=optional(list(string))
+  }))
   default = {
    ingress_self = {
       description = "ingress self"
@@ -69,7 +71,9 @@ variable sg_ingress_rules {
 
 variable sg_egress_rules {
   description = "default egress sg rules"
-  type = map(any)
+  type = map(object({description=string,from_port=number,to_port=number,protocol=string,
+                     cidr_blocks=optional(list(string)),self=optional(bool),security_groups=optional(list(string))
+  }))
   default = {
    egress_default = {
       description = "egress default"
