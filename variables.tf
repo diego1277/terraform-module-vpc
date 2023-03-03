@@ -55,7 +55,6 @@ variable public_subnet_tags {
 
 variable sg_ingress_rules {
   description = "default ingress sg rules"
-  type = map(any)
   default = {
    ingress_self = {
       description = "ingress self"
@@ -69,7 +68,6 @@ variable sg_ingress_rules {
 
 variable sg_egress_rules {
   description = "default egress sg rules"
-  type = map(any)
   default = {
    egress_default = {
       description = "egress default"
