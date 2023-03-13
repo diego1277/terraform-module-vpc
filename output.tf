@@ -17,3 +17,13 @@ output "default_sg_id" {
   description = "default security group id"
   value = aws_default_security_group.this.id
 }
+
+output "private_rt_id" {
+  description = "private route table id"
+  value = try(aws_route_table.private[0].id,null)
+}
+
+output "public_rt_id" {
+  description = "public route table id"
+  value = try(aws_route_table.public[0].id,null)
+}
