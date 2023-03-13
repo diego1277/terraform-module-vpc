@@ -25,5 +25,5 @@ output "private_rt_id" {
 
 output "public_rt_id" {
   description = "public route table id"
-  value = try(aws_route_table.public[0].id,null)
+  value = aws_route_table.public.id
 }
