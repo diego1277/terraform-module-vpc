@@ -1,6 +1,6 @@
 resource "aws_eip" "this" {
   count = length(var.private_subnets) > 0 ? 1 : 0
-  vpc = true
+  domain   = "vpc"
   
   tags = merge({Name = "${var.name}_elastic_ip"},local.common_tags)
 }
