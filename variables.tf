@@ -84,3 +84,9 @@ variable sg_egress_rules {
     }
   }
 }
+variable default_sg_custom_tag {
+  description = "default sg custom tags"
+  type        = map
+  default = {}
+}
+default_sg_custom_tag
