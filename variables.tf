@@ -89,4 +89,3 @@ variable default_sg_custom_tag {
   type        = map
   default = {}
 }
-default_sg_custom_tag
