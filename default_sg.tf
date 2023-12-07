@@ -26,5 +26,5 @@ resource "aws_default_security_group" "this" {
       security_groups = lookup(egress.value, "security_groups",[])
      }
   }
-  tags = merge({Name = "${var.name}_default_sg"},local.common_tags) 
+  tags = merge({Name = "${var.name}_default_sg"},var.default_sg_custom_tags) 
 }
