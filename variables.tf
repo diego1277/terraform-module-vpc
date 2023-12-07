@@ -84,7 +84,7 @@ variable sg_egress_rules {
     }
   }
 }
-variable default_sg_custom_tag {
+variable default_sg_custom_tags {
   description = "default sg custom tags"
   type        = map
   default = {}
