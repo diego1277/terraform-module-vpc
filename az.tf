@@ -3,7 +3,7 @@ data "aws_availability_zones" "available" {
 }
 
 resource "random_shuffle" "private" {
-  count = length(var.private_subnets) > 0 ? 1 : 0
+  count        = length(var.private_subnets) > 0 ? 1 : 0
   input        = data.aws_availability_zones.available.names
   result_count = length(var.private_subnets)
 }
