@@ -112,3 +112,15 @@ variable "public_routes_peering" {
   type        = map(any)
   default     = {}
 }
+
+variable "private_routes_tg" {
+  description = "transit gateway routes for private subnets"
+  type        = map(any)
+  default     = {}
+}
+
+variable "public_routes_tg" {
+  description = "transit gateway routes for public subnets"
+  type        = map(any)
+  default     = {}
+}
