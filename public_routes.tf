@@ -17,7 +17,7 @@ resource "aws_route" "public_peering" {
 
 resource "aws_route" "public_tg" {
   for_each               = length(var.public_subnets) > 0 && length(var.public_routes_tg) > 0 ? var.public_routes_tg : {}
-  route_table_id         = aws_route_table.private[0].id
+  route_table_id         = aws_route_table.public[0].id
   destination_cidr_block = each.value.destination_cidr_block
   transit_gateway_id     = each.value.transit_gateway_id
 }
