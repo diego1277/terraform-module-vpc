@@ -10,7 +10,7 @@ resource "aws_route" "public_internet_gateway" {
 
 resource "aws_route" "public_peering" {
   for_each                  = length(var.public_subnets) > 0 && length(var.public_routes_peering) > 0 ? var.public_routes_peering : {}
-  route_table_id            = aws_route_table.private[0].id
+  route_table_id            = aws_route_table.public.id
   destination_cidr_block    = each.value.destination_cidr_block
   vpc_peering_connection_id = each.value.vpc_peering_connection_id
 }
